@@ -1,16 +1,14 @@
-# czestochowa
+# Częstochwa
 
-A new Flutter project.
+# This is the second version of the application - working !
+Druga werja apllkiacji, pomrawiona - działająca.
 
-## Getting Started
+The application presents data on air quality in Czestochowa.
+Aplikacja prezentuje dane o jakości powietrza w Częstochowie.
 
-This project is a starting point for a Flutter application.
+The application presents information about selected districts of Częstochowa.
+Aplikacja prezentuje informacje o wybranych dzielnicach Częstochowy.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The user can himself choose the name of the city for which he wants to know the current weather forecast. 
+Użytkownik może sam wybrać nazwę miasta dla którego chce poznać aktualną prognozę pogody. 
