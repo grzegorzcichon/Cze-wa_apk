@@ -47,6 +47,7 @@ class Buttons {
   final String gotowatherforecast = "Sprawdż pronozę pogody";
   final String reloaddata = "Odśwież dane";
   final String close = "zamknij";
+  final String getweather = 'Pobierz';
 }
 
 class Errors {

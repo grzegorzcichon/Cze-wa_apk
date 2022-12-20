@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../resources/strings/strings.dart';
 import '../../../widgets/text_styles.dart';
 import '../cubit/enums.dart';
 import '../cubit/weather_cubit.dart';
@@ -126,7 +127,10 @@ class _SearchWidget extends StatelessWidget {
                   .read<WeatherCubit>()
                   .getWeatherModel(city: _controller.text);
             },
-            child: const Text('Get'),
+            child: Text(Str.buttons.getweather,
+                style: TextStyles.overline(
+                    color: Theme.of(context).colorScheme.fontblacktext,
+                    context: context)),
           ),
         ],
       ),
