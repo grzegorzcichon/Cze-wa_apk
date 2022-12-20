@@ -37,6 +37,7 @@ class Label {
   final String deviceosname = 'System operacyjny: ';
   final String devicescreenresolution = 'Rozdzielczość ekranu: ';
   final String devicebrand = 'Marka: ';
+  final String weather = "Sprawdź pogodę w mieście";
 }
 
 class Buttons {

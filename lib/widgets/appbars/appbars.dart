@@ -39,9 +39,6 @@ class CustomAppbarMain extends StatelessWidget with PreferredSizeWidget {
               if (value == 0) {
                 launch('mailto:grzegorz@cichon.dev?'
                     'subject=Aplkacja "O Częstochowie"');
-                //Navigator.push(context,
-                // MaterialPageRoute(builder: (context) => SendEmail()));
-
               } else if (value == 1) {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => BugInfoPage()));
@@ -114,6 +111,30 @@ class CustomAppbarDeviceInfoScreen extends StatelessWidget
         backgroundColor: Theme.of(context).colorScheme.appBarcolor,
         title: Center(
             child: Text(Str.label.deviceinformationappbar,
+                style: TextStyles.overline(
+                    color: Theme.of(context).colorScheme.fontblacktext,
+                    context: context))),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
+        leading: Container(
+          child: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () => Navigator.of(context).pop()),
+        ));
+    //Navigator.of(context, rootNavigator: true).pop(context)));
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
+
+class CustomAppbarWeatherScreen extends StatelessWidget
+    with PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: Theme.of(context).colorScheme.appBarcolor,
+        title: Center(
+            child: Text(Str.label.weather,
                 style: TextStyles.overline(
                     color: Theme.of(context).colorScheme.fontblacktext,
                     context: context))),

@@ -1,6 +1,7 @@
 import 'package:czestochowa_app/resources/colors/colors.dart';
 import 'package:czestochowa_app/views/aircondition/main/aurcondititioncity_mainpage.dart';
 import 'package:czestochowa_app/views/districts/main/districts_mainpage.dart';
+import 'package:czestochowa_app/views/weather/main/weather_homepage.dart';
 import 'package:czestochowa_app/widgets/buttons/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -153,7 +154,7 @@ class Home extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DistrictsMainPage()),
+                MaterialPageRoute(builder: (context) => WeatherHomePage()),
               );
             },
           ));
