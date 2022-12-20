@@ -81,9 +81,9 @@ class Home extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.1,
                       child: _buildGotoDiscritsc()),
                   Container(
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                  )
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      child: _buildGotoWeather()),
                 ],
               ),
             )),
@@ -126,6 +126,27 @@ class Home extends StatelessWidget {
           child: BaseButton(
             color: Theme.of(context).colorScheme.basebuttonColor,
             textView: Text(Str.buttons.gotoczestochowadustrict,
+                style: TextStyles.overline(
+                    color: Theme.of(context).colorScheme.fontblacktext,
+                    context: context)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DistrictsMainPage()),
+              );
+            },
+          ));
+    });
+  }
+
+  Widget _buildGotoWeather({Widget? child}) {
+    return Builder(builder: (context) {
+      return Container(
+          margin: EdgeInsets.only(top: 20),
+          child: BaseButton(
+            color: Theme.of(context).colorScheme.basebuttonColor,
+            textView: Text(Str.buttons.gotowatherforecast,
+                textAlign: TextAlign.left,
                 style: TextStyles.overline(
                     color: Theme.of(context).colorScheme.fontblacktext,
                     context: context)),

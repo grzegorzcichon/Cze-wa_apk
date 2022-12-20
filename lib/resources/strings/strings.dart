@@ -43,6 +43,7 @@ class Buttons {
   const Buttons();
   final String aircondition = "Jakość powietrza w Częstochowie";
   final String gotoczestochowadustrict = "Poznaj dzielnicę Częstochowy";
+  final String gotowatherforecast = "Sprawdż pronozę pogody";
   final String reloaddata = "Odśwież dane";
   final String close = "zamknij";
 }
