@@ -11,11 +11,16 @@ import '../cubit/weather_cubit.dart';
 import '../model/weather_model.dart';
 import '../repository/weather_repository.dart';
 
-class WeatherHomePage extends StatelessWidget {
+class WeatherHomePage extends StatefulWidget {
   const WeatherHomePage({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<WeatherHomePage> createState() => _WeatherHomePageState();
+}
+
+class _WeatherHomePageState extends State<WeatherHomePage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -76,21 +81,72 @@ class _DisplayWeatherWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
-        return Column(
-          children: [
-            Text(
-              weatherModel.temperature.toString(),
-              style: TextStyles.overline(
-                  color: Theme.of(context).colorScheme.fontblacktext,
-                  context: context),
-            ),
-            const SizedBox(height: 60),
-            Text(weatherModel.city,
-                style: TextStyles.overline(
-                    color: Theme.of(context).colorScheme.fontblacktext,
-                    context: context)),
-            const SizedBox(height: 60),
-          ],
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Temperatura:',
+                    textAlign: TextAlign.right,
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                  Text(
+                    ' ${weatherModel.temperature.toString()}${' °C'}',
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Miasto:',
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                  Text(weatherModel.city,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context)),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Czas lokalny:',
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                  Text(weatherModel.localtime,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context)),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Czas aktualizacji:',
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                  Text(weatherModel.lastupdated,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context)),
+                ],
+              ),
+              const SizedBox(height: 60),
+            ],
+          ),
         );
       },
     );
@@ -115,8 +171,7 @@ class _SearchWidget extends StatelessWidget {
               controller: _controller,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                label: Text('City'),
-                hintText: 'London',
+                label: Text('Miasto'),
               ),
             ),
           ),

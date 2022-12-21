@@ -5,9 +5,26 @@ class WeatherRepository {
   Future<WeatherModel?> getWeatherModel({
     required String city,
   }) async {
-    final response = await Dio().get(
-        'http://api.weatherapi.com/v1/current.json?key=bad6992f8a184659840180617222012 &q=Czestochowa&aqi=yes');
-    print(response.data);
-    return const WeatherModel(temperature: -100, city: 'Czestochwa');
+    final response = await Dio().get<Map<String, dynamic>>(
+        'http://api.weatherapi.com/v1/current.json?key=bad6992f8a184659840180617222012 &q=$city&aqi=yes');
+    final responseData = response.data;
+
+    if (responseData == null) {
+      return null;
+    }
+
+    final name = responseData['location']['name'] as String;
+    final localtime = responseData['location']['localtime'] as String;
+    final temperature = (responseData['current']['temp_c']);
+    final wind = (responseData['current']['wind_kph']);
+    final lastupdated = (responseData['current']['last_updated']);
+
+    return WeatherModel(
+      temperature: temperature,
+      city: name,
+      wind: wind,
+      localtime: localtime,
+      lastupdated: lastupdated,
+    );
   }
 }
