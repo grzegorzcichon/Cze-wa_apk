@@ -38,6 +38,15 @@ class Label {
   final String devicescreenresolution = 'Rozdzielczość ekranu: ';
   final String devicebrand = 'Marka: ';
   final String weather = "Sprawdź pogodę w mieście";
+  final String city = "Miasto:  ";
+  final String temperature = "Temperatura: ";
+  final String wind = "Wiatr:  ";
+  final String winddir = 'Kierunek wiatru:  ';
+  final String pressure = 'Ciśnienie:  ';
+  final String pm25 = 'PM 2,5:  ';
+  final String PM10 = "PM 10:  ";
+  final String co = 'Co:  ';
+  final String time = 'Czas lokalny:  ';
 }
 
 class Buttons {

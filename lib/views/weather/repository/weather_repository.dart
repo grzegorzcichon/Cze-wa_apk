@@ -17,7 +17,12 @@ class WeatherRepository {
     final localtime = responseData['location']['localtime'] as String;
     final temperature = (responseData['current']['temp_c']);
     final wind = (responseData['current']['wind_kph']);
+    final winddir = (responseData['current']['wind_dir']);
+    final pressure = (responseData['current']['pressure_mb']);
     final lastupdated = (responseData['current']['last_updated']);
+    final pm25 = (responseData['current']['air_quality']['pm2_5']);
+    final pm10 = (responseData['current']['air_quality']['pm10']);
+    final co = (responseData['current']['air_quality']['co']);
 
     return WeatherModel(
       temperature: temperature,
@@ -25,6 +30,11 @@ class WeatherRepository {
       wind: wind,
       localtime: localtime,
       lastupdated: lastupdated,
+      pressure: pressure,
+      winddir: winddir,
+      pm25: pm25,
+      pm10: pm10,
+      co: co,
     );
   }
 }

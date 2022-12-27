@@ -86,26 +86,9 @@ class _DisplayWeatherWidget extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                children: [
-                  Text(
-                    'Temperatura:',
-                    textAlign: TextAlign.right,
-                    style: TextStyles.overline(
-                        color: Theme.of(context).colorScheme.fontblacktext,
-                        context: context),
-                  ),
-                  Text(
-                    ' ${weatherModel.temperature.toString()}${' °C'}',
-                    style: TextStyles.overline(
-                        color: Theme.of(context).colorScheme.fontblacktext,
-                        context: context),
-                  ),
-                ],
-              ),
-              Row(
                 children: <Widget>[
                   Text(
-                    'Miasto:',
+                    Str.label.city,
                     style: TextStyles.overline(
                         color: Theme.of(context).colorScheme.fontblacktext,
                         context: context),
@@ -116,15 +99,104 @@ class _DisplayWeatherWidget extends StatelessWidget {
                           context: context)),
                 ],
               ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      Str.label.temperature,
+                      textAlign: TextAlign.right,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context),
+                    ),
+                    Text(
+                      ' ${weatherModel.temperature.toString()}${' °C'}',
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      Str.label.wind,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context),
+                    ),
+                    Text(' ${weatherModel.wind.toString()}${' km/h'}',
+                        style: TextStyles.overline(
+                            color: Theme.of(context).colorScheme.fontblacktext,
+                            context: context)),
+                  ],
+                ),
+              ),
               Row(
                 children: <Widget>[
                   Text(
-                    'Czas lokalny:',
+                    Str.label.winddir,
                     style: TextStyles.overline(
                         color: Theme.of(context).colorScheme.fontblacktext,
                         context: context),
                   ),
-                  Text(weatherModel.localtime,
+                  Text(weatherModel.winddir,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context)),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      Str.label.pressure,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context),
+                    ),
+                    Text(' ${weatherModel.pressure}${' hPa'}',
+                        style: TextStyles.overline(
+                            color: Theme.of(context).colorScheme.fontblacktext,
+                            context: context)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      Str.label.pm25,
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context),
+                    ),
+                    Text(
+                        double.parse((weatherModel.pm25.toString()))
+                            .toStringAsFixed(3),
+                        style: TextStyles.overline(
+                            color: Theme.of(context).colorScheme.fontblacktext,
+                            context: context)),
+                  ],
+                ),
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    Str.label.PM10,
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                  Text(
+                      double.parse((weatherModel.pm10.toString()))
+                          .toStringAsFixed(3),
                       style: TextStyles.overline(
                           color: Theme.of(context).colorScheme.fontblacktext,
                           context: context)),
@@ -133,12 +205,28 @@ class _DisplayWeatherWidget extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Text(
-                    'Czas aktualizacji:',
+                    Str.label.co,
                     style: TextStyles.overline(
                         color: Theme.of(context).colorScheme.fontblacktext,
                         context: context),
                   ),
-                  Text(weatherModel.lastupdated,
+                  Text(
+                      double.parse((weatherModel.co.toString()))
+                          .toStringAsFixed(3),
+                      style: TextStyles.overline(
+                          color: Theme.of(context).colorScheme.fontblacktext,
+                          context: context)),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    Str.label.time,
+                    style: TextStyles.overline(
+                        color: Theme.of(context).colorScheme.fontblacktext,
+                        context: context),
+                  ),
+                  Text(weatherModel.localtime,
                       style: TextStyles.overline(
                           color: Theme.of(context).colorScheme.fontblacktext,
                           context: context)),
