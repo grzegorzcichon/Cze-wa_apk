@@ -1,7 +1,7 @@
 # Częstochwa
 
 # This is the second version of the application - working !
-Druga werja apllkiacji, pomrawiona - działająca.
+Druga werja apllkiacji, poprawiona - działająca.
 
 The application presents data on air quality in Czestochowa.
 Aplikacja prezentuje dane o jakości powietrza w Częstochowie.
